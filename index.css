@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #345678;
+    position: fixed;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 2rem;
+    list-style-type: none;
+}
+
+.nav-list a {
+    display: block;
+    padding: 1rem;
+    font-size: x-large;
+    color: white;
+    font-weight: 500;
+}
+.nav-list a:hover {
+    background-color: #f2d97d;
+}
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdbdb;
+    height: 100vh;
+    font-size: 64px;
+}
+
+#welcome-section h6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 3rem;
+    font-weight: 500;
+    line-height: 55%;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #A4BCD3;
+    padding: 4.5rem 0;
+}
+.projects-grid a:hover {
+    transform: translateY(-8px);
+}
+
+.projects-grid a {
+    transition: transform 0.2s ease-in;
+}
+
+.project-tile {
+    margin: 1rem;
+}
+
+figcaption {
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+    color: white;
+    background-color: #345678;
+    padding: .5rem;
+    margin-top: -5px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 31rem;
+    background-color: #f2d97d;
+}
+
+#contact h1 {
+    font-size: 64px;
+    padding: 0 0 3rem 0;
+    font-weight: 700;
+}
+
+#contact p {
+    font-size: xx-large;
+    padding-bottom: 3.2rem;
+    font-weight: 500;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+}
+
+#contact div a {
+    margin: 0 2rem;
+    font-size: xx-large;
+    color: black;
+    font-weight: 500;
+    transition: transform .5s ease-out;
+}
+
+#contact div a:hover {
+    transform: translateY(-8px);
+    
+}
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #345678;
+    color: white;
+}
+
+@media (max-width:750px) {
+    footer {
+        background-color: yellowgreen;
+    }
+}
