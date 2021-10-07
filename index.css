@@ -41,7 +41,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #dbdbdb;
+    background-color: white;
     height: 100vh;
     font-size: 64px;
 }
