@@ -41,7 +41,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #d9d9d9;
     height: 100vh;
     font-size: 64px;
 }
