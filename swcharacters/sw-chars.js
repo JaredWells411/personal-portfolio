@@ -1,5 +1,6 @@
 import { people } from '../data/people.js'
 
+const mainBody = document.querySelector('body')
 const header = document.createElement('header')
 const maleButton = document.createElement('button')
 maleButton.textContent = 'Male Characters'
@@ -12,8 +13,6 @@ mainBody.appendChild(header)
 const mainContent = document.querySelector('#main')
 
 document.body.insertBefore(header, mainContent)
-
-
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
