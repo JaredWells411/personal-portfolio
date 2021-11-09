@@ -3,8 +3,27 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-image: url("/images/starsbg.jpg");
+    margin: 0;
+} 
+
+ header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 13px;
+ }
+
 .nav {
-    margin-left: 1rem;
+    background-color: black;
+    padding: 1rem;
+    border: 2px solid #999;
 }
 
 #main {

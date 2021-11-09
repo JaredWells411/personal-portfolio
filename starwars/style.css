@@ -1,20 +1,46 @@
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-image: url("/images/starsbg.jpg");
+    margin: 0;
+}
+
+header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 figure {
-    background-color: bisque;
+    background-color: rgb(34, 34, 34);
+}
+
+figure:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease-in;
 }
 
 img {
-    border: 10px solid bisque
+    border: 10px solid rgb(34, 34, 34);
 }
 
 figcaption {
     text-align: center;
     font-size: xx-large;
-    background-color: bisque;
+    font-weight: 600;
+    background-color: rgb(34, 34, 34);
     padding-bottom: 1rem;
+    color: white;
 }
