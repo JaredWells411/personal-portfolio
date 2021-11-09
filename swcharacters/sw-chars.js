@@ -1,4 +1,5 @@
 import { people } from '../data/people.js'
+import { getLastNumber } from '../utility/index.js'
 
 const header = document.createElement('header')
 const maleButton = document.createElement('button')
@@ -32,11 +33,3 @@ function populateDOM(characters) {
 })
 }
 
-function getLastNumber(url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-    if(url.charAt(start) === '/') {
-        start++ 
-    }
-    return url.slice(start, end)
-}
