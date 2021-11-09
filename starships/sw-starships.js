@@ -23,7 +23,7 @@ populateView(starships)
 
 function populateShipView(shipData) {
     console.log(`Blah Blah Blah ${shipData.name}`)
-    let shipImage = deocument.createElement('img')
-    shipImage.src = `https://starwars-visualguide.com/assets/img/starships/5.jpg`
+    let shipImage = document.createElement('img')
+    shipImage.src = `https://starwars-visualguide.com/assets/img/starships/15.jpg`
     shipView.appendChild(shipImage)
 }
