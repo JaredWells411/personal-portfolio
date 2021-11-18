@@ -1,8 +1,14 @@
 import { senators } from '../data/senators.js'
+import { representatives } from '../data/representatives.js'
 
+const members = [...senators, ...representatives] // this line is the modern and right way to combine arrays for future reference
 const senatorDiv = document.querySelector('.senators')
 
-function SimplifiedSenators() {
+console.log(members.length)
+
+function SimplifiedMembers(chamberFilter) {
+    const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : members)
+
     return senators.map(senator => {
         let middleName = senator.middle_name ? ` ${senator.middle_name} `: ` `
         return {
@@ -11,12 +17,15 @@ function SimplifiedSenators() {
             party: senator.party,
             gender: senator.gender,
             seniority: +senator.seniority,
-            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
+            state: senator.state,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
+            missedVotesPct: senator.missed_votes_pct,
+            loyaltyPct: senator.votes_with_party_pct,
         }
     })
 }
 
-populateSenatorDiv(SimplifiedSenators())
+
 
 function populateSenatorDiv(simpleSenators) {
     simpleSenators.forEach(senator => {
@@ -34,11 +43,20 @@ function populateSenatorDiv(simpleSenators) {
 }
 
 const filterSenators = (prop, value) => {
-    return SimplifiedSenators().filter(senator => senator[prop] === value)
+    return SimplifiedMembers().filter(senator => senator[prop] === value)
 }
 
-const mostSeniorSenator = SimplifiedSenators().reduce((acc, senator) => {
+const mostSeniorMember = SimplifiedMembers().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
-console.log(mostSeniorSenator)
+const mostLoyal = SimplifiedMembers().reduce((acc, senator) => {
+    if (senator.loyaltyPct === 100) {
+        acc.push(senator)
+    }
+    return acc
+}, [])
+
+console.log(mostLoyal)
+
+populateSenatorDiv(SimplifiedMembers())
