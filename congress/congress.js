@@ -3,13 +3,15 @@ import { representatives } from '../data/representatives.js'
 
 const members = [...senators, ...representatives] // this line is the modern and right way to combine arrays for future reference
 const senatorDiv = document.querySelector('.senators')
+const loyaltyHeading = document.querySelector('.mostLoyal')
+const seniorityHeading = document.querySelector('.seniority')
 
 console.log(members.length)
 
 function SimplifiedMembers(chamberFilter) {
-    const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : members)
+    const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : member)
 
-    return senators.map(senator => {
+    return filteredArray.map(senator => {
         let middleName = senator.middle_name ? ` ${senator.middle_name} `: ` `
         return {
             id: senator.id,
@@ -24,8 +26,6 @@ function SimplifiedMembers(chamberFilter) {
         }
     })
 }
-
-
 
 function populateSenatorDiv(simpleSenators) {
     simpleSenators.forEach(senator => {
@@ -50,6 +50,8 @@ const mostSeniorMember = SimplifiedMembers().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
+seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} whoe has been in Congress for ${mostSeniorMember.seniority} years.`
+
 const mostLoyal = SimplifiedMembers().reduce((acc, senator) => {
     if (senator.loyaltyPct === 100) {
         acc.push(senator)
@@ -57,6 +59,16 @@ const mostLoyal = SimplifiedMembers().reduce((acc, senator) => {
     return acc
 }, [])
 
-console.log(mostLoyal)
+const naughtyList = document.createElement('ol')
+
+const unwavering = mostLoyal.map(naughty => {
+    let listItem = document.createElement('li')
+    listItem.textContent = naughty.name
+    naughtyList.appendChild(listItem)
+})
+
+loyaltyHeading.appendChild(naughtyList)
+
+
 
 populateSenatorDiv(SimplifiedMembers())
