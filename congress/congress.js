@@ -6,7 +6,14 @@ const senatorDiv = document.querySelector('.senators')
 const loyaltyHeading = document.querySelector('.mostLoyal')
 const seniorityHeading = document.querySelector('.seniority')
 
-console.log(members.length)
+// const header = document.createElement('header')
+
+//const senatorsButton = document.createElement('button')
+//senatorsButton.textContent = 'Senators'
+//senatorsButton.addEventListener('click', () => populateSenatorDiv(justSenators))
+//header.appendChild(senatorsButton)
+
+populateSenatorDiv(SimplifiedMembers())
 
 function SimplifiedMembers(chamberFilter) {
     const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : member)
@@ -71,4 +78,3 @@ loyaltyHeading.appendChild(naughtyList)
 
 
 
-populateSenatorDiv(SimplifiedMembers())
