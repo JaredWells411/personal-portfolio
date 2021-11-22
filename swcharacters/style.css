@@ -50,6 +50,7 @@ button:hover {
 figure {
     margin: 20px;
     background-color: rgb(34, 34, 34);
+    transition: transform .3s ease-out;
 }
 
 figure:hover {
