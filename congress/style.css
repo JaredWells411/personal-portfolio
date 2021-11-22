@@ -7,7 +7,41 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end; 
-    background-color: red;
+    background-color: navy;
+    color: oldlace;
+    padding: 1.5rem;
+}
+
+h1 {
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: larger;
+}
+
+h3 {
+    margin-bottom: 15px;
+    font-size: medium;
+}
+
+ol {
+    font-weight: 300;
+    font-size: 16px;
+    list-style-type: square;
+}
+
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}
+
+main {
+    background-image: url(/images/usabackground.jpg);
+    background-attachment: fixed;
+    padding-top: 1.5rem;
 }
 
 .senators {
@@ -21,8 +55,16 @@ figure {
     display: flex;
     flex-direction: column;
     margin: 2rem;
+    border: 10px solid red;
 }
 
 figcaption {
     text-align: center;
+    background-color: red;
+    color: oldlace;
 }
+
+img {
+    border: 10px solid red;
+}
+

@@ -57,7 +57,7 @@ const mostSeniorMember = SimplifiedMembers().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
-seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} whoe has been in Congress for ${mostSeniorMember.seniority} years.`
+seniorityHeading.textContent = `-The most senior member of Congress is ${mostSeniorMember.name} whoe has been in Congress for ${mostSeniorMember.seniority} years-`
 
 const mostLoyal = SimplifiedMembers().reduce((acc, senator) => {
     if (senator.loyaltyPct === 100) {
