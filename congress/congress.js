@@ -11,7 +11,7 @@ const seniorityHeading = document.querySelector('.seniority')
 //const senatorsButton = document.createElement('button')
 //senatorsButton.textContent = 'Senators'
 //senatorsButton.addEventListener('click', () => populateSenatorDiv(justSenators))
-//header.appendChild(senatorsButton)
+//header.appendChild(senatorsButton) I need help hahahaha
 
 populateSenatorDiv(SimplifiedMembers())
 
