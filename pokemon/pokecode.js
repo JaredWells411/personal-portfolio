@@ -6,15 +6,17 @@ async function getAPIData(url) {
     }
 }
 
-getAPIData(`https://pokeapi.co/api/v2/pokemon/?limit=25`)
-.then((data) => {
+function loadPokemon(offset, limit) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`).then((data) => {
     console.log(data.results)
     for (const pokemon of data.results) {
         getAPIData(pokemon.url).then(pokeData => populatePokeCards(pokeData))
     }
-})
+})}
 
 const pokeGrid = document.querySelector('.pokeGrid')
+const loadButton = document.querySelector('.loadPokemon')
+loadButton.addEventListener('click', () => loadPokemon())
 
 function populatePokeCards(singlePokemon) {
     const pokeScene = document.createElement('div')
