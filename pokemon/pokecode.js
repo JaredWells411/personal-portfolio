@@ -17,18 +17,37 @@ function loadPokemon(offset = 0, limit = 25) {
 
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
-loadButton.addEventListener('click', () => loadPokemon(800, 50))
+loadButton.addEventListener('click', () => loadPokemon())
 const newButton = document.querySelector('.newPokemon')
 newButton.addEventListener('click', () => {
     let pokeName = prompt('What is the name of your new Pokemon?')
     let pokeHeight = prompt('What is the height of your Pokemon?')
     let pokeWeight = prompt('What is the weight of your Pokemon?')
     let pokeAbilities = prompt('What are your pokemon abilities? (use a coma seperated list)')
-    let newPokemon = new Pokemon (pokeName, pokeHeight, pokeWeight, pokeAbilities)
+
+    let newPokemon = new Pokemon (pokeName, pokeHeight, pokeWeight, getAbilitiesArray(pokeAbilities))
     console.log(newPokemon)
     populatePokeCard(newPokemon)
     
 })
+
+const morePokemon = document.querySelector('.morePokemon')
+morePokemon.addEventListener('click', () => {
+    let startPoint = prompt('Which Pokemon ID do we start with?')
+    let howMany = prompt('How many more Pokemon do you want to see?')
+    loadPokemon(startPoint, howMany)
+})
+
+function getAbilitiesArray(commaString) {
+    let tempArray = commaString.split(',')
+    return tempArray.map((abilityName) => {
+        return {
+            abiility: {
+                name: abilityName
+            }
+        }
+    })
+}
 
 function populatePokeCard(singlePokemon) {
     const pokeScene = document.createElement('div')
@@ -51,9 +70,9 @@ function populateCardFront(pokemon) {
     const pokeFront = document.createElement('figure')
     pokeFront.className = 'cardFace front'
     const pokeImg = document.createElement('img')
-    pokeImg.src = '../images/pokeball.png'
+    pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
     const pokeCaption = document.createElement('figcaption')
-    pokeCaption.textContent = 'pokemon.name'
+    pokeCaption.textContent = `${pokemon.id} ${pokemon.name}`
     pokeFront.appendChild(pokeImg)
     pokeFront.appendChild(pokeCaption)
     return pokeFront
@@ -78,6 +97,7 @@ function populateCardBack(pokemon) {
 
 class Pokemon {
     constructor(name, height, weight, abilities) {
+        this.id = 100,
         this.name = name,
         this.height = height,
         this.weight = weight,
@@ -85,4 +105,3 @@ class Pokemon {
     }
 }
 
-let newPokemon = new Pokemon('Thoremon', 243, 3754)
