@@ -47,3 +47,13 @@
 figure img {
     width: 200px;
 }
+
+figcaption {
+    text-align: center;
+}
+
+figcaption::first-letter {
+    text-transform: capitalize;
+    font-size: 120%;
+    line-height: 3em;
+}
