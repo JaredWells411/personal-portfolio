@@ -1,15 +1,21 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
 }
 
 header {
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 2.2rem;
 }
 
 button {
     padding: .8rem;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 72px;
 }
 
 .pokeGrid {
