@@ -3,9 +3,19 @@
     box-sizing: border-box;
 }
 
+header {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+button {
+    padding: .8rem;
+}
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    background: green;
 }
 
 .scene {
