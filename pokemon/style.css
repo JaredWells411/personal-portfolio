@@ -7,21 +7,44 @@
 header {
     text-align: center;
     padding-bottom: 2.2rem;
+    background-color: rgb(223, 0, 0);
+    padding-top: 2rem;
 }
 
 button {
     padding: .8rem;
     border-radius: 8px;
+    color: yellow;
+    background-color: blue;
+    font-weight: 700;
+    border-color: rgb(0, 0, 134);
+}
+
+button:hover {
+    color: blue;
+    background-color: yellow;
 }
 
 h1 {
     font-size: 72px;
+    color: yellow;
+    text-shadow: 5px 5px 5px blue;
+}
+
+h4 {
+    text-align: center;
+    color: yellow;
+}
+
+li {
+    text-align: center;
+    text-decoration-style: none;
 }
 
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
-    background: green;
+    background: rgb(255, 243, 243);
 }
 
 .scene {
@@ -38,6 +61,7 @@ h1 {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    align-items: center;
 }
 
 .card.is-flipped {
@@ -52,16 +76,24 @@ h1 {
 }
 
 .front {
-    background: #2a75bb;
+    background: #5fabf1;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 10px;
+    border-color: yellow;
 }
 
 .back {
-    background: #c7a;
+    background: rgb(0, 0, 150);
     transform: rotateY(180deg);
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 10px;
+    border-color: rgb(0, 0, 99);
 }
 
 figure img {
-    width: 200px;
+    width: 180px;
 }
 
 figcaption {

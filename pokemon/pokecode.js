@@ -7,7 +7,7 @@ async function getAPIData(url) {
     }
 }
 
-function loadPokemon(offset = 0, limit = 25) {
+function loadPokemon(offset = 0, limit = 50) {
     removeChildren(pokeGrid)
     getAPIData(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`).then(async (data) => {
     for (const pokemon of data.results) {
@@ -81,7 +81,6 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
-    pokeBack.textContent = 'Back'
     const label = document.createElement('h4')
     label.textContent = 'Abilities'
     const abilityList = document.createElement('ul')
