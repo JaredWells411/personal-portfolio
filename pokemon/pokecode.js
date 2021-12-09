@@ -7,6 +7,19 @@ async function getAPIData(url) {
     }
 }
 
+const audioButton = document.querySelector('#audioButton')
+const audio = document.querySelector('audio')
+
+audioButton.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.volume = 0.5;
+        audio.play();
+    } 
+    else {
+        audio.pause();
+    }
+})
+
 function loadPokemon(offset = 0, limit = 50) {
     removeChildren(pokeGrid)
     getAPIData(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`).then(async (data) => {
@@ -81,21 +94,39 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
+    const pokeHP = document.createElement('h4')
+    pokeHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    
+    const pokeType = document.createElement('h4')
+    pokeType.textContent = 'Type'
+    const typeList = document.createElement('ul')
+    pokemon.types.forEach((type) => {
+        let typeItem = document.createElement('li')
+        typeItem.textContent = type.type.name
+        typeList.appendChild(typeItem)
+    })
+    
+
     const label = document.createElement('h4')
     label.textContent = 'Abilities'
     const abilityList = document.createElement('ul')
     pokemon.abilities.forEach((ability) => {
         let abilityItem = document.createElement('li')
-        ability.textContent = ability.ability.name
+        abilityItem.textContent = ability.ability.name
         abilityList.appendChild(abilityItem)
     })
+
+    pokeBack.appendChild(pokeHP)
     pokeBack.appendChild(label)
     pokeBack.appendChild(abilityList)
+    pokeBack.appendChild(pokeType)
+    pokeBack.appendChild(typeList)
+    
     return pokeBack
 }
 
 class Pokemon {
-    constructor(name, height, weight, abilities) {
+    constructor(name, height, weight, abilities, types) {
         this.id = 100,
         this.name = name,
         this.height = height,

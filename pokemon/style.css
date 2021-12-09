@@ -19,6 +19,7 @@ button {
     font-weight: 700;
     border-color: rgb(0, 0, 134);
     margin: 8px;
+    font-size: 16px;
 }
 
 button:hover {
@@ -35,11 +36,19 @@ h1 {
 h4 {
     text-align: center;
     color: yellow;
+    font-size: 20px;
 }
 
 li {
     text-align: center;
-    text-decoration-style: none;
+    margin-right: 2.6rem;
+    list-style-type: none;
+    color: yellow;
+}
+
+li::first-letter {
+    text-transform: capitalize;
+    font-size: 16px;
 }
 
 .pokeGrid {
