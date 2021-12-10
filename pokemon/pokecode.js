@@ -117,10 +117,12 @@ function populateCardBack(pokemon) {
     })
 
     pokeBack.appendChild(pokeHP)
-    pokeBack.appendChild(label)
-    pokeBack.appendChild(abilityList)
     pokeBack.appendChild(pokeType)
     pokeBack.appendChild(typeList)
+    pokeBack.appendChild(label)
+    pokeBack.appendChild(abilityList)
+    
+    
     
     return pokeBack
 }
