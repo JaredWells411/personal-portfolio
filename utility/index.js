@@ -12,3 +12,19 @@ export function removeChildren(container) {
     container.removeChild(container.firstChild)
     }
 }
+
+//function getRandomMeme(arr) {
+    //const randomMeme = Math.floor(Math.random() * arr.length)
+    //const meme = arr[randomMeme]
+    ///return meme
+//}
+
+///const array = [1, 'hello', 5, 8]
+//const result = getRandomMeme(array)
+
+//console.log(result)
+
+//const memes = document.querySelector
+
+
+
